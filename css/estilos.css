@@ -29,4 +29,27 @@ body{
     color: rgb(220, 198, 179);
     font-weight: bold;
     margin-left: 10px;
+    margin-right: 10px;
+}
+
+/*ESTILOS AL FORMULARIO Problema 2*/
+.formulario{
+    margin-left: 20px;
+}
+.formulario label{
+    font-size: 20px;
+
+}
+.formulario input{
+    border-radius: 4px;
+    height: 20px;
+    width: 230px;
+    margin-bottom: 10px;
+}
+.btnGenerarMs{
+    
+    border-radius: 6px;
+    width: 150px;
+    height: 30px;
+
 }
