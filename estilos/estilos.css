@@ -1,0 +1,32 @@
+/*  */
+
+body{
+    background-color: white;
+}
+/*Estilos al div que contiene el mensaje*/
+.uno{
+    border:3px solid rgb(0, 0, 0) ;
+    background-color: rgb(153, 153, 255);
+}
+
+/*estilos a la etiqueta p que contiene la palabra Mensaje*/
+.mensaje{
+    margin: 15px;
+    padding: 15px;
+    background-color: rgb(243, 243, 243);
+    border: 3px solid rgb(255, 255, 0);
+    font-size: 20px;
+    font-weight: bold;
+}
+/*Estilos al div ue contiene las etiqueta p llamadas comentarios */
+.dos{
+    background-color: rgb(206, 136, 69);
+    
+}
+/*Estilos a la etiquetas p, que contienen los comentarios*/
+.comentario{
+    border-bottom: 2px solid rgb(51, 130, 17);
+    color: rgb(220, 198, 179);
+    font-weight: bold;
+    margin-left: 10px;
+}
