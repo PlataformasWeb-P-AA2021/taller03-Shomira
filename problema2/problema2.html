@@ -17,8 +17,8 @@
         <input type="text" id="nombre" ><br>
         <label for="apellido">Apellido: </label><br>
         <input type="text" id="apellido" name="apellido"><br>
-        <label id="fechaNacimiento">Fecha de Nacimiento: </label><br>
-        <input type="text" id="datepicker"><br>
+        <label >Fecha de Nacimiento: </label><br>
+        <input  type="text" id="datepicker"><br>
         
     </form>
     <button type='submit' class="btnGenerarMs" id="generaSms">Generar Mensaje</button>
@@ -29,7 +29,7 @@
             $("button").click(function () {      
             console.log($('#nombre').val());
             console.log($('#apellido').val());
-            console.log($('#fechaNacimiento').val());
+            console.log($('#datepicker').val());
             });
         });
     </script>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <h1>Paises</h1>
+    <!--Etiqueta p que imprime el resultado-->
+    <p id="datosPaises"></p>
+    <button id="btnMostrar"> Mostrar</button>
+
+</body>
+
+
+<script>
+
+    $(document).ready(function() {
+        $("#btnMostrar").click(function () {
+            $.ajax({
+                /*URL del archivo json*/
+                url:'https://pkgstore.datahub.io/core/country-codes/country-codes_json/data/616b1fb83cbfd4eb6d9e7d52924bb00a/country-codes_json.json',
+                dataType:'JSON'
+            }).then(function(data) {
+                /*Ciclo for para recorrer el json*/
+                var es = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp';
+                for(var i=0; i<data.length; i++){
+                $('#datosPaises').append("<p> <b>Nombre: </b>"+ (data[i])['CLDR display name']+ es+ " <b>  Capital: </b> " + data[i].Capital  + es+
+                "<b>   FIPS: </b> "+data[i].FIPS + es + "<b>   FIFA: </b>"+ data[i].FIFA + es +  "<b>  Continente: </b>"+ data[i].Continent + es + "<b>  Lenguajes: </b>"+
+                data[i].Languajes + es + "<b>  ID Geoname: </b>"+ (data[i])['Geoname ID']+ es + "<b>  Señales Distintivas: </b>"+ data[i].DS+"</p>"+ es + '<hr>');
+              }
+            }) 
+            
+        });
+        
+    });
+    
+</script>
+</html>
