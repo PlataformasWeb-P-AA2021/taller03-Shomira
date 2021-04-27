@@ -33,7 +33,7 @@ body{
 }
 
 /*ESTILOS AL FORMULARIO Problema 2*/
-.formulario{
+.formulario, .h2Formulario{
     margin-left: 20px;
 }
 .formulario label{

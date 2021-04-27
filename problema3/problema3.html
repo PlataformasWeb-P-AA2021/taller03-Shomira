@@ -5,16 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
-    <title>Document</title>
+    <title>Paises</title>
 </head>
 <body>
-    <h1>Paises</h1>
+    <h1>Países</h1>
+    
+    <button id="btnMostrar"> Mostrar</button>
+    <button type="submit" id="lmpDatos">Limpiar información</button>
     <!--Etiqueta p que imprime el resultado-->
     <p id="datosPaises"></p>
-    <button id="btnMostrar"> Mostrar</button>
-
+    
 </body>
-
 
 <script>
 
@@ -24,18 +25,25 @@
                 /*URL del archivo json*/
                 url:'https://pkgstore.datahub.io/core/country-codes/country-codes_json/data/616b1fb83cbfd4eb6d9e7d52924bb00a/country-codes_json.json',
                 dataType:'JSON'
+
             }).then(function(data) {
+
+                /*Espacios luego de cada dato */
+                var es = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp';
+
                 /*Ciclo for para recorrer el json*/
-                var es = '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp';
                 for(var i=0; i<data.length; i++){
-                $('#datosPaises').append("<p> <b>Nombre: </b>"+ (data[i])['CLDR display name']+ es+ " <b>  Capital: </b> " + data[i].Capital  + es+
+                $('#datosPaises').append("<h2>"+(data[i])['CLDR display name']+"</h2>"+"<p> <b>Nombre: </b>"+ (data[i])['CLDR display name']+ es+ " <b>  Capital: </b> " + data[i].Capital  + es+
                 "<b>   FIPS: </b> "+data[i].FIPS + es + "<b>   FIFA: </b>"+ data[i].FIFA + es +  "<b>  Continente: </b>"+ data[i].Continent + es + "<b>  Lenguajes: </b>"+
                 data[i].Languajes + es + "<b>  ID Geoname: </b>"+ (data[i])['Geoname ID']+ es + "<b>  Señales Distintivas: </b>"+ data[i].DS+"</p>"+ es + '<hr>');
               }
+
             }) 
             
-        });
-        
+        }); /*Para vaciar la etiqueta p*/
+            $( "#lmpDatos" ).click(function() {
+                $('#datosPaises').empty();
+            });
     });
     
 </script>
